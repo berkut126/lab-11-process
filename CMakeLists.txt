@@ -58,6 +58,7 @@ target_include_directories(template
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Patched)
 target_include_directories(localTest
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/Patched
         )
 target_link_libraries(template
         ${CMAKE_THREAD_LIBS_INIT})
