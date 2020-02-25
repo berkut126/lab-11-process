@@ -54,8 +54,11 @@ add_executable(localTest
 # TODO: change template word to project name and delete this comment
 target_include_directories(tests
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(template
+        PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Patched)
 target_include_directories(localTest
-        PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+        PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
+        )
 target_link_libraries(template
         ${CMAKE_THREAD_LIBS_INIT})
 # TODO: change template word to project name and delete this comment

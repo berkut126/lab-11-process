@@ -10,10 +10,10 @@
 #include <boost/program_options.hpp>
 #include <boost/filesystem.hpp>
 
-#include <boost/process/child.hpp>
+#include <Child.h>
 #include <boost/process.hpp>
-#include <boost/process/pipe.hpp>
-#include <boost/process/io.hpp>
+#include <Pipe.h>
+#include <IO.h>
 #include <boost/process/group.hpp>
 
 using boost::program_options::options_description;

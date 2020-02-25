@@ -1,7 +1,5 @@
 // Copyright 2018 Your Name <your_email>
-
 #include <header.hpp>
-
 int run(std::string& buildOption, variables_map& vm){
     boost::filesystem::path pathToCmake = boost::process::search_path("cmake");
     boost::process::group cmakeGroup;
