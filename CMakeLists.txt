@@ -28,8 +28,8 @@ string(APPEND CMAKE_CXX_FLAGS " -Wshadow -Wnon-virtual-dtor")
 hunter_add_package(GTest)
 find_package(GTest CONFIG REQUIRED)
 
-hunter_add_package(Boost COMPONENTS system filesystem program_options)
-find_package(Boost CONFIG REQUIRED system filesystem program_options)
+hunter_add_package(Boost COMPONENTS program_options)
+find_package(Boost CONFIG REQUIRED program_options)
 
 hunter_add_package(BoostProcess)
 find_package(BoostProcess CONFIG REQUIRED)
