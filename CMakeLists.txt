@@ -25,55 +25,25 @@ string(APPEND CMAKE_CXX_FLAGS " -pedantic -Werror -Wall -Wextra")
 string(APPEND CMAKE_CXX_FLAGS " -Wno-unused-command-line-argument")
 string(APPEND CMAKE_CXX_FLAGS " -Wshadow -Wnon-virtual-dtor")
 
-hunter_add_package(GTest)
-find_package(GTest CONFIG REQUIRED)
-
-
 hunter_add_package(BoostProcess)
 find_package(BoostProcess CONFIG REQUIRED)
-
-hunter_add_package(Boost COMPONENTS program_options)
-find_package(Boost CONFIG REQUIRED program_options)
-
-hunter_add_package(Async++)
-find_package(Async++ CONFIG REQUIRED)
-
-find_package(Threads)
-
-# TODO: change template word to project name and delete this comment
-add_library(template STATIC
-        # enum your files and delete this comment
-        ${CMAKE_CURRENT_SOURCE_DIR}/sources/main.cpp)
-add_executable(tests
-        # TODO: enum your files and delete this comment
-        ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
-        )
 
 add_executable(localTest
         ${CMAKE_CURRENT_SOURCE_DIR}/sources/source.cpp)
 
-# TODO: change template word to project name and delete this comment
-target_include_directories(tests
-        PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_include_directories(template
-        PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Patched)
 target_include_directories(localTest
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
-        ${CMAKE_CURRENT_SOURCE_DIR}/Patched
-        )
-target_link_libraries(template
-        ${CMAKE_THREAD_LIBS_INIT})
-# TODO: change template word to project name and delete this comment
-target_link_libraries(tests
-        GTest::main)
-target_link_libraries(localTest
+        #${CMAKE_CURRENT_SOURCE_DIR}/Patched
+)
+target_link_libraries(localTest PUBLIC
         BoostProcess::boost_process
         ${CMAKE_THREAD_LIBS_INIT}
-        Boost::system
-        Boost::filesystem
-        Boost::program_options
-        Boost::boost
-        Async++::Async++)
+        #Boost::system
+        #Boost::filesystem
+        #Boost::program_options
+        #Boost::boost
+        #Async++::Async++
+)
 
 enable_testing()
 add_test(NAME unit_tests COMMAND tests)
